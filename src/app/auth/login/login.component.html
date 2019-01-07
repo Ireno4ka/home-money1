@@ -1,0 +1,46 @@
+<div class="bg-light text-dark border border-info rounded text-center w-100 mx-lg-auto">
+  <div class="alert alert-{{message.type}}"
+    *ngIf="message.text">
+    {{ message.text }}
+  </div>
+<p class="text-center pt-2 font-weight-normal">Войдите для работы</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="text-center">
+  <div class="form-group"
+  [ngClass]="{'has-warning': form.get('email').invalid && form.get('email').touched}">
+    <label for="email" class="col-3 col-form-label">Email</label>
+    <input type="text" class="form-control mb-2" id="email" class="col-7 col-form-label" placeholder="Введите ваш email"
+    formControlName="email">
+    <div class="form-help-text"
+    *ngIf="form.get('email').invalid && form.get('email').touched">
+    <div *ngIf="form.get('email')['errors']['required']">Email не может быть пустым.</div>
+    <div *ngIf="form.get('email')['errors']['email']">Введите корректный email.</div>
+    </div>
+  </div>
+  <div class="form-group">
+  <!--[ngClass]="{'has-error': form.get('[password]').invalid && form.get('password').touched}"-->
+    <label for="password" class="col-3 col-form-label">Пароль</label>
+    <input type="password" class="form-control" id="password" class="col-7 col-form-label" placeholder="Пароль"
+    aria-describedby="passwordHelpBlock" formControlName="password">
+    <div class="form-help-text"
+    *ngIf="form.get('password').invalid && form.get('password').touched">
+    <div *ngIf="form.get('password')['errors']['required']">Пароль не может быть пустым.</div>
+    <div *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">Пароль должен быть больше 
+      {{ form.get('password')['errors']['minlength']['requiredLength'] }} символов. Сейчас 
+      {{ form.get('password')['errors']['minlength']['actualLength'] }}</div>
+    </div>
+    <!-- <small id="passwordHelpBlock" class="form-text text-muted text-center">
+      Your password must be 8-20 characters long, <br>
+      contain letters and numbers.
+    </small> -->
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-block btn-primary" class="col-10 col-form-label"
+    [disabled]="form.invalid">Войти</button>
+  </div>
+  <div class="form-group pb-1">
+    <p class="text-muted">
+      Нет аккаунта? <a [routerLink]="'/registration'">Зарегистрироваться!</a>
+    </p>
+  </div>
+</form>
+</div>
