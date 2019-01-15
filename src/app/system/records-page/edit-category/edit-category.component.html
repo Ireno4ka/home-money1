@@ -5,6 +5,9 @@
             </div>
         </div>
         <div class="card-block">
+            <div class="alert alert-{{message.type}}"
+            *ngIf="message.text"
+            >{{ message.text }}</div>
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                 <div class="form-group">
                     <label class="control-label" for="e-select-category">Введите категорию</label>
@@ -28,14 +31,13 @@
                 [ngClass]="{'has-error': name.invalid && name.touched}"
                 >
                     <label class="control-label" for="e-category-name">Введите название</label>
-                    <input 
-                    type="text" 
+                    <input type="text" 
                     id="e-category-name" 
                     class="form-control"
                     required
                     #name="ngModel"
                     name="name"
-                    ngModel
+                    [ngModel]="currentCategory.name"
                     >
                     <span *ngIf="name.invalid && name.touched"
                     class="form-help-text"
@@ -49,7 +51,7 @@
                     type="number"
                     id="e-category-value" 
                     class="form-control"
-                    [ngModel]="1"
+                    [ngModel]="currentCategory.capacity"
                     name="capacity"
                     required
                     #capacity="ngModel"
@@ -63,7 +65,8 @@
                 <button 
                 type="submit" 
                 class="btn btn-primary"
-                >Добавить
+                [disabled]="f.invalid"
+                >Редактировать
               </button>
             </form>
         </div>

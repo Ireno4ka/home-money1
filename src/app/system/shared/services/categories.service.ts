@@ -8,6 +8,7 @@ import { Category } from '../models/category.model';
 @Injectable ()
 
 export class CategoriesService extends BaseApi {
+
     constructor (public http: HttpClient) {
         super(http);
     }
@@ -18,5 +19,13 @@ export class CategoriesService extends BaseApi {
 
     getCategories (): Observable<Category[]> {
         return this.get('categories');
+    }
+
+    updateCategory (category: Category): Observable<Category> {
+        return this.put(`categories/${category.id}`, category);
+    }
+
+    getCategoryById (id: number): Observable<Category> {
+        return this.get(`categories/${id}`);
     }
 }

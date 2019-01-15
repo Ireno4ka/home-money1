@@ -20,8 +20,7 @@
     }
   ],
   "bill": {
-    "value": 100000,
-    "curency": "RUB"
+    "value": 97500
   },
   "categories": [
     {
@@ -40,8 +39,8 @@
       "capacity": 7000
     },
     {
-      "name": "Каток",
-      "capacity": 5000,
+      "name": "Игры",
+      "capacity": 1000,
       "id": 4
     }
   ],
@@ -51,7 +50,7 @@
       "type": "income",
       "amount": 1250,
       "category": 2,
-      "date": "12.06.2017 19:49:02",
+      "date": "12.01.2019 19:49:02",
       "description": "Подарили еду в гостях"
     },
     {
@@ -59,14 +58,14 @@
       "type": "outcome",
       "amount": 1300,
       "category": 1,
-      "date": "13.06.2017 19:49:02",
+      "date": "13.01.2019 19:49:02",
       "description": "Купил посудомоечную машину"
     },
     {
       "type": "income",
       "amount": 1480,
       "category": 2,
-      "date": "17.06.2017 14:00:48",
+      "date": "15.06.2019 14:00:48",
       "id": 3,
       "description": "Поход в окей с баллами. Бесплатная еда"
     },
@@ -74,7 +73,7 @@
       "type": "outcome",
       "amount": 2470,
       "category": 2,
-      "date": "17.06.2017 14:00:58",
+      "date": "11.01.2019 14:00:58",
       "id": 4,
       "description": "Закупка на неделю"
     },
@@ -82,9 +81,65 @@
       "type": "outcome",
       "amount": 4000,
       "category": 3,
-      "date": "10.06.2017 14:01:58",
+      "date": "10.12.2019 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "income",
+      "amount": 100,
+      "category": 1,
+      "date": "10.01.2019 03:50:28",
+      "description": "d",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 17000,
+      "category": 1,
+      "date": "11.01.2019 22:05:30",
+      "description": "так просто",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 1500,
+      "category": 1,
+      "date": "12.01.2019 02:42:16",
+      "description": "test",
+      "id": 8
+    },
+    {
+      "type": "outcome",
+      "amount": 1500,
+      "category": 3,
+      "date": "12.01.2019 02:42:33",
+      "description": "так просто",
+      "id": 9
+    },
+    {
+      "type": "outcome",
+      "amount": 1500,
+      "category": 2,
+      "date": "12.01.2019 02:42:55",
+      "description": "test",
+      "id": 10
+    },
+    {
+      "type": "income",
+      "amount": 1000,
+      "category": 3,
+      "date": "12.01.2019 02:53:52",
+      "description": "подарили",
+      "id": 11
+    },
+    {
+      "type": "income",
+      "amount": 1000,
+      "category": 3,
+      "date": "12.01.2019 02:54:18",
+      "description": "подарили",
+      "id": 12
     }
   ]
 }
